@@ -1,0 +1,9 @@
+.home{
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    width: 100%;
+    font-family: "Inter", sans-serif;
+}
+.home p{
+    padding: 5vw;
+}

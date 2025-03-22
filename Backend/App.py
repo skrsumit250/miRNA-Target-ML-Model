@@ -34,11 +34,10 @@ def predict():
             'embedding_result': {
                 'number_of_seed_region': result[0],
                 'positions': result[1],
-                'log1p': result[2],
-                'distribution_score': result[3],
                 'gc_content': result[4],
                 'free_energy': result[5]
-            }
+            },
+            'success':True
         })
     except Exception as e:
         print(f"Error processing request: {e}")
