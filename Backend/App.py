@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for all origins and methods.
 
 # Load the trained model
-model = load('./Backend/best_svr_model.joblib')
+model = load('./best_svr_model.joblib')
 
 @app.route('/predict', methods=['POST'])
 def predict():
