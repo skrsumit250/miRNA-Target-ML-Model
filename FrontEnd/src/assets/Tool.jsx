@@ -5,26 +5,31 @@ function Tool(){
     const [Gene,setGene] = useState('ttgcatttcctaggtttctgtgtttggggtgtgtgtgcgtgtctctctctctctctctctctttctctttctctctctttttgaatttcaaagaagaaacagtctcagggaaatttcttttttcttttttttttttaaagagaacaagaaaagtacaacattgcttaagtcctacctcatctttatttttttacagatgaatgtacttatcttttctgcagggattgagcctgtgaagtgataatttctatctacctcataaatctttacatttccttctgcaacaggccctcttcccctcctcagtggagtttgcatttccctcttcccctgcgtggggcatgatatgcacaagcctggcatctgtatggctgggagggcactggatgtgtgtggtggggtgtattctgtagattgagccaaggaaacacaaaaaaaaactactaagtaaaaaaacaaaaaactataaaacatggaaaaaataggatttgaaatgcataattatagaatacctgtgttcttgagaatactgtttatatggggtttagattatgttgtgttgttttgatctttttggaaaatcttctctttttaaatgctgcaacagagaaatttcctctgttctctgtttatacctcagtgtgtttaacatcctcttctgcatcgtttcttgatcttagacgttgtggctgtggcttgctagccaagaaaagcagacccttcatattttagggtatataatctttgtttcttttaagggagggtgtgtgcatgtttgtttcaaagccatcttgcacccaagtagtaaagctgaaaatgacacactgcctcccaaagaacctctccttttcacactttggtttcttaaaaaagtatatagatggtagctcaggatttttgattaaacatattctcaaaagttatgctttcttattttgctgttaggttataaagggttaaatggaaggaaaaaggaaattaacctcgttctcagagagagggttttcaggcatgggctgacgtggacatgaatgtgggtggacatgcgtgtgctgagggagtcagggagcacattaaagaacaaggcacccccaaactataggaactccacagaaagggcagggtctgccctgacccgcgagtgcatgttgttctgtagtgctaggggtttcttttcctaagaagagtaggcaaaggaaagaacttttattttacaagcacaattttttcctgctttgaaagttcagggaaatagaaggtttgaaagtcaaattaataccaacagcccagtcccacaccctctgcttgggtcactttttataggattgtttgcacccaggccatgctttaggacctcatggttaacatgaatccccccgccccctctccccccaaggcctttgaccataaaggatctagaaaccaaattgtcccaacctgaaatgtaggatgtaatgtcttttcttaaacctgtaactcggtaccaaagaatgaaaatttaaggctcccactgcagaactgtggggtagaatctgtgtcactttacaggattggttggttgtaagctggacttgggtacaaaacttgtgcttctgggcattgtctgtctttcaagtgcaaagcagatgtagctgataccctgcttgtcagaacccagtgggttcctgcaatgccccaaatactgaaataagaaccaaattctggaggagccctcctcagggaaaagagggactctcaaacaaacgtcagtgacttacaagggagacctcttgtttaaagacttatggatcaacttctgttcctctgtttaagagaaatttctattgcaaaatgggtatcgttttaaatgagcagaacagattaacaaatggagcaatttgtttctgttatcccaatagaaaaggagatgatggggacagtgtgacaagtcaatcaagttgcttttcccgtacacctcttttggacgtttaatttactactactacaagctactctgtctcttcccattgctttaattctagggtttctgagtgaccaaaatgggaaggaaaaaaaaaacctcatctcacagaggagaactgcatgcaataaaagattcaaaagttggaaagtagcttcaaactgctgctggctcccagctgctgttacagggtgggaaggtgttaggaaatgttgtttgttagaagctccttttactgtagaatttaatagtgaatccttccccaatgcctattcagttgccttttggccgttaagctctaagttctttggtaaagagttaatataattaaacatttttactgttttctattttggagtaacttggtgctgatcttccttccctttccccagctgcccaacaagccaccctttaaacaccaaagacaactggttttaaatgcttgaaaaaaattttattgaggagatggatcttgattaaaatcttttcatcatcattttcattctgctcttttctttctaatttccccagatgtaggaaaattttgggacctgaatgagaaatgttcttggtgcataacagtaactagagctccttatttgacattttactatggatgtgatcgaaaagccaagattttcgctccatggctgaaattatcaggtcttaatttacagacttgtaaatttgcaggcttagagcaactagaactatcccctgaaataggtgtgtaggtcagagatactacctctttgtcctcagtggtggtatatctatctccttacctttctgtacccaaaatggtgcatgactggtatttgagaaacatggtcacatttggaaagcttttgtttttaaaacattggcggtttttcctgcccgtggttgactcctgacccatagggattggtgcgaagcactttggagagtgtttattgtatgatgtgaaatgttctaaatcaaagaaagatgataaaagccaacatttggcagtccctagtgtgaaactgtgaaaagtacctgtgtttaaatgcataatctcctgcccgggtaatgccaggtagccaggagttgggtcaaagaagggagtcgtcatcctgatggaaaaaataaggtcctgggtattatgaggtaggagaataaaaaggtttctggggagtaagtatgacaattactagtccccatggaggtctgatctggtcaggtggcaagggttgggtggggtatgatgtaagctcagtttatgtgtggagatgcccattgggtttggatatataggtttgagtattgagatgtttaaaggacatctaacccataggtaaaaactacttttgcttgacactgacttaacatttcaaaagtgttatttttggtcccaagatctaatgctgtctcagaacatgtgccctgttgtggctgcaagtggcactcaagttgactagagcacagtgacctgggttgtaccccaagtgcactaactcctcaatgcccttttaagtctaacttatttgggaaacacataacaaagggtaccataaaccgaatccaaattacgtgttgggccaaaaatgttgccagaactgaggcactttgtgatggagttgcaagagatagcttgagatcggctcagtctgatttattctagttaagccaaagcttaattatttgaggaggaaagtcttttaggcttgaagcagcaaaatactgtttatatatgtgttaccttcctcgttggaagattctacgattgctctgttctggtaggtggtgaaagatatgccaaagttttaggcttgtttttctgatcttatttttttaatccagtggtgccaaaaagtatttagggtatgtttaaggtatatttaaaacatcactctgaatgagtttccaacagtctggggctgtataaaagtcacactcttgtacttgcaggtgatggtgtcacagggccagggcctccagagctctacggctttctctggttttctatagggccaagggcacaggacgcagcattccagaccacactgactgcttttgctgagtttctacctcacttgtggcaagtcatctacctcatgttagcatctgacaggtctcaaaaagaatagtattaatccagtgggcagtgggtgggagtgggaagctacctctaaaagaaatgttaccataaatctacaactgatttctcccaggagaaatgttctacttaccttgaaagagaaatgtcaggcaaatgtagtcataaatccaagtagttcttagcaatctggcttttccccctcaaaaagaattatgcataccattactgttgttcagtattatgaaactactggttaatctgacctattggaggacttaactacaaataaagacctttaggtctctttctcttcaagagaaaaatattttatctgtatttcgaatgtctgcaaataataccctttaggagcaattctaaaggtctagatcttggaaacatcaaatatttgaagggaatgagaatcctcttgacttcatgattgtatttgtagctctctggacccggcaggacgttcatcaccatgatgttgcaacaatcactgttttgactgagcagtgactgttgaagtgtgtattgctcttttgttttgtttttatttttttctaccaaaggtaacatgttgacgggttttttttttccttgtttattaaatacttgataaagttgagaagcacattaccaggatatactgtattgaccctcccacctctcttctgccctaatttttggttgtttggaagagaggagggtcctaagaccactgtcattatcatgaggggcttataaatgtcatggtgaagaaatacctcaatgatgtctatttttaaaactgatcttacgggttaacaagccagcctggtgggatattttccatcatcatttaaccaataatggttctaaaagttttgtgtatccacatggtcttagacctccttttaatgattgtattaacttacaagctcaggtagtatttttcttaagactctatctcagagcacactgactgaatgttgatgtgtgtagcaaagtgtttactttctttaaataaccagctctgtaactctgtaagttctttgtgtttctagcagtctgtgtagttgtctttcttcagaggaagatttttcacatttctggggttttcttgcttttagggtggtaagattcctttctttttttcccttttctcctaaaatcgatgcaggtaagggtgggtgggtaaggggtgttgttttttaactagcatgttagttatacttgggtgggtgggagggttgttaaactgaatcttgcttaatactgtccattagctctcatgccgggtcagcaaaatgctttaatttttaactgcagaacatgtgactcggttgagtctttttgtcttttttttttttaaataaacaattgggggaattaatgtgggcaagttgccttatgttagaatgactaagttaaacctcttaatttgtatttgtccaaggcagacatgatataaggaatatgcactaccgtagtaactcccctggccgcagaaaccacactgcaagcctgtccggggtggggtgctgactgccatttgccacttttaaatgggcactgccgtggtaatgtgaatcccatcaatgcagtagatgggtggggaaatgaagatttccccccaaacctttaggcaaaagtgagtttttgtttggttgattttgggtttttttcccccctcctcttttggctttcacattttaaatcttaaatgttactattgcaggccgcaggcatgacaggcaatgagcaggtgaagaaccaatggaaaagtgttcaaaaactcctgtgttagctaacaggcttctgaatgtatcactgtggtccacagagaaggctggaggaggtagcaaggagatgctgtatcagctactacagccttaaaacaaagttggtgtctctttggactttaaaattgttcctatgcagcttattttatttttgtttaatcaaataaacgagggtttttccatggcta');
     const [data,setData] = useState(null);
 
-    const handleSubmit = async ()=>{
-        try{
-            const response = await fetch('https://mirna-target-ml-model.onrender.com/predict',{
-                method:'POST',
-                headers:{'Content-Type': 'application/json'},
-                body:JSON.stringify({ miRNA, Gene })
+    const handleSubmit = async () => {
+        try {
+            const response = await fetch('https://mirna-target-ml-model.onrender.com/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ miRNA, Gene })
             });
-
+    
+            // Parse the response as JSON
             const result = await response.json();
-            if(result.success){
-                setData(result);
+    
+            // Check if the response contains an error
+            if (!response.ok || !result.success) {
+                // Log the error message from the server
+                console.error('Server Error:', result.error || 'Unknown server error');
+                return;
             }
-            else{
-                console.log('Error',result);
-            }
-
-        }catch{
-            console.log('Internal server error');
+    
+            // If the response is successful, update the state with the result
+            setData(result);
+        } catch (error) {
+            // Catch any network or other errors
+            console.error('Internal Server Error:', error.message || 'Unknown error');
         }
-    }
+    };
 
     useEffect(()=>{data && console.log('Data',data)},[data]);
 
