@@ -7,7 +7,7 @@ function Tool(){
 
     const handleSubmit = async ()=>{
         try{
-            const response = await fetch('https://mirna-target-ml-model.onrender.com/',{
+            const response = await fetch('https://mirna-target-ml-model.onrender.com/predict',{
                 method:'POST',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify({ miRNA, Gene })

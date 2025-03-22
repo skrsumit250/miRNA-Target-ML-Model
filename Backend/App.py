@@ -5,7 +5,7 @@ from Computation import embedding  # Assuming this exists
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "http://localhost:5173"}})  # Enable CORS for all origins and methods.
+CORS(app)  # Enable CORS for all origins and methods.
 
 # Load the trained model
 model = load('./best_svr_model.joblib')
