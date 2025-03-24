@@ -65,7 +65,7 @@ function Tool(){
             <div className="display">
                 <div className="head"><p>Terminal</p></div>
                 <div className="terminal">
-                    {!data && predicting && <p className="blinking">Predicting.....</p> }
+                    {!data && predicting && <p className="blinking">Predicting...(it may take a while to fetch data from server)</p> }
                     {data && 
                     <div className="show"> 
                         <p>Predicted Score: {data.prediction}</p>
