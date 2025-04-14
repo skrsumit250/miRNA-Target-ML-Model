@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter ,Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import Navbar from './assets/navbar';
 import Home from './assets/home';
 import Search from './assets/Search';

@@ -61,14 +61,13 @@ def search_mirna():
             return jsonify({'error': 'Missing miRNA in request', 'success': False}), 400
 
         query_mirna = data['miRNA']
-        matching_entries = search_targets(query_mirna)
+        result = search_targets(query_mirna)  # Now returns counts + entries
 
         return jsonify({
             'success': True,
-            'message': 'Search completed. CSV file was generated.',
-            'matches': matching_entries
+            'message': 'Search completed. CSV file generated.',
+            'match_counts': result['match_counts'],  # Send counts to frontend
         })
-
     except Exception as e:
         print(f"Error in /search: {e}")
         return jsonify({'error': str(e), 'success': False}), 500
