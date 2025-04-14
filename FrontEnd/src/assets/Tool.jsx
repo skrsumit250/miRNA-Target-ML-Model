@@ -11,7 +11,7 @@ function Tool(){
         try {
             const local_url = 'http://127.0.0.1:5000/';
             const server_url = 'https://mirna-target-ml-model.onrender.com/'
-            const response = await fetch(`${local_url}/predict`, {
+            const response = await fetch(`${server_url}/predict`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ miRNA, Gene })

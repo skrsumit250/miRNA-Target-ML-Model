@@ -5,7 +5,7 @@ from RNA import duplexfold
 
 # --- File Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_DATA_PATH = os.path.join(BASE_DIR, 'dat.json')
+JSON_DATA_PATH = os.path.join(BASE_DIR, 'data.json')
 CSV_OUTPUT_PATH = os.path.join(BASE_DIR, 'output.csv')
 
 # --- Load JSON Data ---
