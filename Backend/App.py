@@ -3,7 +3,7 @@ import json
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from joblib import load
-from Computation import embedding  # Make sure this exists
+from Computation import embedding
 from Search import search_targets
 
 app = Flask(__name__)
@@ -12,39 +12,13 @@ CORS(app)
 # --- File Paths ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, 'model.joblib')
-JSON_DATA_PATH = os.path.join(BASE_DIR, 'data.json')
-CSV_OUTPUT_PATH = os.path.join(BASE_DIR, 'output.csv')  # Assuming this is where your CSV is saved
+CSV_OUTPUT_PATH = os.path.join(BASE_DIR, 'output.csv')
 
 # --- Load ML Model ---
 if not os.path.exists(MODEL_PATH):
     raise FileNotFoundError(f"Model file not found at {MODEL_PATH}")
 model = load(MODEL_PATH)
 print("Model loaded successfully.")
-
-# --- Load JSON Data ---
-try:
-    with open(JSON_DATA_PATH, 'r') as f:
-        mirna_target_data = json.load(f)
-    if not isinstance(mirna_target_data, list):
-        raise ValueError("Expected data.json to contain a list of entries.")
-    print("JSON data loaded successfully.")
-except FileNotFoundError:
-    print(f"Warning: {JSON_DATA_PATH} not found.")
-    mirna_target_data = []
-except json.JSONDecodeError:
-    raise ValueError(f"Invalid JSON format in {JSON_DATA_PATH}")
-
-# --- Helper: Seed Region Similarity ---
-def search_similarity(s1, s2):
-    if not s1 or not s2:
-        return 0
-    if len(s1) >= 8 and len(s2) >= 8 and s1[0:8] == s2[0:8]:
-        return 8
-    if len(s1) >= 8 and len(s2) >= 8 and s1[1:8] == s2[1:8]:
-        return 7
-    if len(s1) >= 7 and len(s2) >= 7 and s1[1:7] == s2[1:7]:
-        return 6
-    return 0
 
 # --- /predict Endpoint ---
 @app.route('/predict', methods=['POST'])
