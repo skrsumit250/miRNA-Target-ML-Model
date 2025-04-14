@@ -9,7 +9,9 @@ function Tool(){
     const handleSubmit = async () => {
         setPredicting(true);
         try {
-            const response = await fetch('https://mirna-target-ml-model.onrender.com/predict', {
+            const local_url = 'http://127.0.0.1:5000/';
+            const server_url = 'https://mirna-target-ml-model.onrender.com/'
+            const response = await fetch(`${local_url}/predict`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ miRNA, Gene })

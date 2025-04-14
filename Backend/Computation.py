@@ -1,4 +1,3 @@
-import csv
 import math
 import numpy as np
 from RNA import duplexfold

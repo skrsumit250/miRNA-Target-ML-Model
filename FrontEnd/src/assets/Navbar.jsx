@@ -7,6 +7,7 @@ function Navbar(){
                 <div className="title"><h1>ML Model for miRNA Target Gene Prediction</h1></div>
                 <ul>
                     <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/search'>Search</Link></li>
                     <li><Link to='/tool'>Predict</Link></li>
                 </ul>
             </div>
