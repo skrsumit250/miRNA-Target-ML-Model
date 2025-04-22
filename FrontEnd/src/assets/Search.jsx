@@ -9,8 +9,8 @@ function Search() {
     const [matchTypeSummary, setMatchTypeSummary] = useState({});
     const [predicting, setPredicting] = useState(false);
     
-    const url = 'http://127.0.0.1:5000';
-    // const url = 'https://mirna-target-ml-model.onrender.com';
+    // const url = 'http://127.0.0.1:5000';
+    const url = 'https://mirna-target-ml-model.onrender.com';
 
     const handleSubmit = async () => {
         setPredicting(true);
