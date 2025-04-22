@@ -2,19 +2,20 @@ import { useState } from "react";
 import '../styles/search.css';
 
 function Search() {
-    const [miRNA, setmiRNA] = useState('UGAGGUAGUAGGUUGUAUAGUU');
+    const [miRNA, setmiRNA] = useState('');
     const [data, setData] = useState(null);
     const [file, setFile] = useState(null);
     const [downloadReady, setDownloadReady] = useState(false);
     const [matchTypeSummary, setMatchTypeSummary] = useState({});
     const [predicting, setPredicting] = useState(false);
     
-    // const url = 'http://127.0.0.1:5000';
-    const url = 'https://mirna-target-ml-model.onrender.com';
+    const url = 'http://127.0.0.1:5000';
+    // const url = 'https://mirna-target-ml-model.onrender.com';
 
     const handleSubmit = async () => {
         setPredicting(true);
         setDownloadReady(false);
+        setData(null);
         try {
             const response = await fetch(`${url}/search`, {
                 method: 'POST',
@@ -78,7 +79,7 @@ function Search() {
             <div className="search">
                 <div className="search-box">
                     <label>miRNA Sequence</label>
-                    <input type="text" value={miRNA} onChange={(e) => setmiRNA(e.target.value)} placeholder="Enter miRNA sequence (e.g., UGAGGUAGUAGGUUGUAUAGUU)"/>
+                    <input type="text" value={miRNA} placeholder="e.g., UGAGGUAGUAGGUUGUAUAGUU (5' → 3')" onChange={(e) => setmiRNA(e.target.value)}/>
                     <button onClick={handleSubmit}>Search</button>
                 </div>
                 <div className="results">

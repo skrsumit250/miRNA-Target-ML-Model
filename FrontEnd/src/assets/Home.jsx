@@ -3,7 +3,54 @@ function Home(){
     return(
         <>
             <div className="home">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, pariatur repellendus ipsum dignissimos, quos suscipit ullam doloremque illo harum consequuntur sequi tempore id recusandae, deserunt tenetur quidem veritatis necessitatibus obcaecati cupiditate? Ex vero expedita perferendis quae sapiente sint obcaecati consectetur aspernatur dolor error, doloribus voluptatem deleniti fugit recusandae rerum tempore esse saepe accusamus? Corporis nesciunt earum labore provident atque ducimus. Autem animi repellat culpa earum distinctio! Necessitatibus odio, commodi nulla cupiditate debitis, laboriosam voluptatum nihil consequuntur asperiores doloremque vero deserunt rerum autem aut aspernatur quia voluptate qui ducimus reiciendis est quasi esse? Laborum nam ducimus veritatis eos incidunt est numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum blanditiis impedit illum quo repellendus perferendis hic incidunt sequi eveniet, provident alias aperiam, iusto explicabo, ea dignissimos. Esse, officia nobis iste dignissimos perferendis laboriosam fuga excepturi vel nisi ullam autem voluptate molestias enim deleniti? Voluptatem voluptas, quod tenetur quos fugiat asperiores quia odit exercitationem accusantium laboriosam totam numquam maiores, ullam vero enim consequuntur aut modi vel harum et! Voluptates voluptas omnis labore eius repellendus, impedit, dolor enim unde consequatur tempore facere inventore, cupiditate obcaecati in laboriosam accusantium veniam praesentium? Eos odio a, nemo debitis nisi repellendus fugit modi quos alias hic? Lorem ipsum dolor sit amet, consectetur adipisicing elit. A suscipit iure nisi! Quod at accusamus, vitae fugit odio ratione nobis aperiam accusantium explicabo? Vitae natus nam ex rem officia illum perspiciatis iusto officiis, molestiae tempora, accusantium fugiat quidem expedita et mollitia commodi fuga atque, qui sed eligendi facere. Molestias aliquam provident officiis ratione debitis tempora assumenda quas nisi sint placeat vero voluptates voluptate ipsam illo facere cumque deleniti neque, quasi quidem nesciunt, laboriosam ducimus? Incidunt suscipit at facere consequatur aliquid, sapiente odio harum dolores accusamus, iusto esse laudantium quod ipsam quas tempora eveniet eos ratione consectetur ex alias! Similique magnam nemo totam quisquam accusantium molestias rerum ea alias expedita sequi ipsam possimus quos est pariatur vel iusto magni corporis placeat, aut reprehenderit dolorum fuga itaque veritatis. Quo eaque qui fuga a hic omnis enim obcaecati corporis numquam. Cupiditate repellat adipisci eum ad non alias, est dicta ipsam magnam assumenda quas perspiciatis voluptate excepturi id, quam impedit et, facere voluptatem vero odit sunt culpa dolorem? Pariatur quas maiores, consectetur eum, consequatur, voluptas provident iure ipsa laborum vel soluta alias tempore? Impedit reprehenderit beatae molestiae repellat iste minus quod accusantium. Saepe quod quas, mollitia iure rerum sed sint consequuntur rem porro ratione.</p>
+                <div className="box">
+                    <h2>Web Application Description: miRNA Target Prediction & Comparative Analysis</h2>
+                    <p>Welcome to the miRNA Target Prediction & Comparative Analysis platform-a comprehensive web-based tool designed to accelerate and enhance the discovery of microRNA (miRNA) targets using state-of-the-art computational methods.</p>
+                </div>
+                <div className="box">
+                    <h2>Key Features:</h2>
+                    <ul>
+                        <li>Machine Learning-Based Target Prediction:Utilize a Support Vector Regression (SVR) model trained on biologically meaningful features—including seed region count and distribution, GC content, and binding free energy—to predict the binding compatibility between miRNAs and their potential gene targets. This approach delivers quantitative target scores, helping prioritize candidates for experimental validation.</li>
+                        <li>Comparative Seed Region Analysis:For novel or uncharacterized miRNAs, the platform offers a comparative module that identifies potential targets by evaluating seed region similarity (6-mer, 7-mer, and 8-mer matches) with known miRNAs. Combined with thermodynamic binding energy calculations, this enables rapid hypothesis generation even when experimental data is limited.</li>
+                        <li>User-Friendly Data Input and Output:Submit miRNA and target gene sequences directly through intuitive web forms. Results are compiled in structured, downloadable CSV files, detailing match types, predicted targets, and binding energies for easy downstream analysis.</li>
+                        <li>Integrated Workflow:Seamlessly switch between predictive modeling and exploratory comparative analysis, allowing both high-confidence predictions for known miRNAs and efficient annotation of novel sequences.</li>
+                        <li>Scalable and Interpretable:The dual-method framework ensures both scalability for large datasets and interpretability of results, supporting researchers in gene regulation studies and miRNA-based therapeutic research.</li>
+                    </ul>
+                </div>
+                <div className="box">
+                    <h2>How It Works:</h2>
+                    <div className="inner">
+                        <h3>Input:</h3>
+                        <ul>
+                            <li>Enter miRNA and/or target gene sequences.</li>
+                            <li>Choose between prediction (SVR model) or comparative analysis (seed region similarity).</li>
+                        </ul>
+                    </div>
+                    <div className="inner">
+                        <h3>Processing:</h3>
+                        <ul>
+                            <li>For prediction, the SVR model evaluates sequence features and outputs a binding compatibility score.</li>
+                            <li>For comparative analysis, the tool finds seed matches with known miRNAs and calculates binding free energy..</li>
+                        </ul>
+                    </div>
+                    <div className="inner">
+                        <h3>Output:</h3>
+                        <ul>
+                            <li>Download results as CSV files, including detailed match information and thermodynamic data.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="box">
+                    <h2>Applications:</h2>
+                    <ul>
+                        <li>Prioritizing miRNA-gene interactions for experimental follow-up</li>
+                        <li>Annotating novel miRNAs with putative targets</li>
+                        <li>supporting research in gene regulation, disease mechanisms, and therapeutic target identification</li>
+                    </ul>
+                </div>
+                <div className="box">
+                    <p>This platform bridges the gap between experimental and computational miRNA research, offering both accuracy and flexibility for users at all levels. Whether you are exploring new miRNAs or validating known interactions, our web tool provides a robust, scalable, and user-friendly solution for miRNA target prediction and comparative analysis.</p>
+                </div>
             </div>
         </>
     )

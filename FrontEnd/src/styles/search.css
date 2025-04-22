@@ -3,7 +3,7 @@
     height: 80vh;
     display: flex;
     flex-direction: row;
-    background-color: #0D0D0D;
+    background: linear-gradient(to right, #e0f2f1, #f1f8e9);
     color: white;
 }
 .search-box{
@@ -20,15 +20,15 @@
 }
 .search-box input{
     border: #FFFFFF 1px solid;
-    background-color: #0D0D0D;
-    color: #FFFFFF;
+    background-color: white;
+    color: black;
     border-radius: 5px;
     font-size: 1vw;
     padding: 0.6vw;
     outline: none;
 }
 .search-box input:focus{
-    border: #497FC0 1px solid;
+    border: #2e7d32 1px solid;
 }
 .search-box button{
     margin: 2vw 0vw;
@@ -37,14 +37,14 @@
     background-color: #FFFFFF;
     border: #FFFFFF 1px solid;
     border-radius: 15px;
-    color: #0D0D0D;
+    color: #2e7d32;
     font-size: 1.8vw;
 }
 .search-box button:hover{
-    background-color: #0D0D0D;
-    color: #497FC0;
+    background-color: #2e7d32;
+    color: white;
     cursor: pointer;
-    border-color: #497FC0;
+    border-color: #2e7d32;
     transition: 0.3s ease;
 }
 .results{
@@ -62,14 +62,14 @@
     background-color: #FFFFFF;
     border: #FFFFFF 1px solid;
     border-radius: 15px;
-    color: #0D0D0D;
+    color: #2e7d32;
     font-size: 1.8vw;
 }
 .results button:hover{
-    background-color: #0D0D0D;
-    color: #497FC0;
+    background-color: #2e7d32;
+    color: white;
     cursor: pointer;
-    border-color: #497FC0;
+    border-color: #2e7d32;
     transition: 0.3s ease;
 }
 #message{
@@ -85,6 +85,7 @@
 .match-types{
     display: flex;
     flex-direction: column;
+    color: black;
 }
 .types{
     display: flex;

@@ -3,7 +3,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #6f727d;
+    background: #2e7d32; /* deep green */
+    color: white;   
     font-family: "Inter", sans-serif;
 }
 .title{
@@ -27,6 +28,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.navbar li:hover{
+    text-decoration: underline;
 }
 .navbar a{
     font-size: 2vw;
