@@ -30,7 +30,16 @@ def search_similarity(s1, s2):
 def calculate_free_energy(miRNA_seq, target_seq):
     """Calculate free energy with error handling."""
     try:
-        return duplexfold(miRNA_seq, target_seq).energy  # in kcal/mol
+        # Isolate folding in a function scope for automatic cleanup
+        def _fold():
+            result = duplexfold(miRNA_seq, target_seq)
+            energy = result.energy
+            del result  # Explicit cleanup
+            return energy
+        
+        energy = _fold()
+        return energy  # in kcal/mol
+    
     except Exception as e:
         print(f"Error folding {miRNA_seq} and {target_seq}: {e}")
         return None
@@ -75,12 +84,10 @@ def search_targets(query_mirna):
                     if isinstance(row, dict):
                         row = list(row.values())
                     target_seq = row[4] if len(row) > 4 else ""
-                    # energy = calculate_free_energy(query_mirna, target_seq)
-                    energy = 10
+                    energy = calculate_free_energy(query_mirna, target_seq)
                     csv_writer.writerow(row + [match_type_str, energy])
             else:
-                # energy = calculate_free_energy(query_mirna, str(entries))
-                energy = 10
+                energy = calculate_free_energy(query_mirna, str(entries))
                 csv_writer.writerow([entries, match_type_str, energy])
 
     return {
