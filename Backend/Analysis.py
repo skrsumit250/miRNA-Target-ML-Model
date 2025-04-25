@@ -8,19 +8,12 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_DATA_PATH = os.path.join(BASE_DIR, 'data.json')
 CSV_OUTPUT_PATH = os.path.join(BASE_DIR, 'output.csv')
 
-def load_json_data():
-    """Load JSON data with minimal memory overhead."""
-    try:
-        with open(JSON_DATA_PATH, 'r') as f:
-            data = json.load(f)
-            if not isinstance(data, list):
-                raise ValueError("Expected data.json to contain a list of entries.")
-            return data
-    except FileNotFoundError:
-        print(f"Warning: {JSON_DATA_PATH} not found. Using empty list.")
-        return []
-    except json.JSONDecodeError:
-        raise ValueError(f"Invalid JSON format in {JSON_DATA_PATH}")
+from flask import Flask
+app = Flask(__name__)
+
+# Load data ONCE at startup
+with open(JSON_DATA_PATH) as f:
+    mirna_target_data = json.load(f) 
 
 def search_similarity(s1, s2):
     """Check seed region similarity."""
@@ -51,7 +44,7 @@ def search_targets(query_mirna):
             'match_counts': {'6-mer': int, '7-mer': int, '8-mer': int}
         }
     """
-    mirna_target_data = load_json_data()
+
     match_counts = {'6-mer': 0, '7-mer': 0, '8-mer': 0}
 
     with open(CSV_OUTPUT_PATH, 'w', newline='') as csvfile:
@@ -82,10 +75,12 @@ def search_targets(query_mirna):
                     if isinstance(row, dict):
                         row = list(row.values())
                     target_seq = row[4] if len(row) > 4 else ""
-                    energy = calculate_free_energy(query_mirna, target_seq)
+                    # energy = calculate_free_energy(query_mirna, target_seq)
+                    energy = 10
                     csv_writer.writerow(row + [match_type_str, energy])
             else:
-                energy = calculate_free_energy(query_mirna, str(entries))
+                # energy = calculate_free_energy(query_mirna, str(entries))
+                energy = 10
                 csv_writer.writerow([entries, match_type_str, energy])
 
     return {
