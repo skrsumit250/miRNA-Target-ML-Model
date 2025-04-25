@@ -10,8 +10,8 @@ function Tool(){
         setPredicting(true);
         setData(null);
         try {
-            const url = 'http://127.0.0.1:5000';
-            // const url = 'https://mirna-target-ml-model.onrender.com'
+            // const url = 'http://127.0.0.1:5000';
+            const url = 'https://mirna-target-ml-model.onrender.com'
             const response = await fetch(`${url}/predict`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
