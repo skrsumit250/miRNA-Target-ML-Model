@@ -8,21 +8,31 @@ function Search() {
     const [downloadReady, setDownloadReady] = useState(false);
     const [matchTypeSummary, setMatchTypeSummary] = useState({});
     const [predicting, setPredicting] = useState(false);
+    const [startTime, setStartTime] = useState(null);
+    const [endTime, setEndTime] = useState(null);
+
     
-    // const url = 'http://127.0.0.1:5000';
-    const url = 'https://mirna-target-ml-model.onrender.com';
+    const url = 'http://127.0.0.1:5000';
+    // const url = 'https://mirna-target-ml-model.onrender.com';
 
     const handleSubmit = async () => {
+        const now = new Date();
+        setStartTime(now);
+        setEndTime(null);
         setPredicting(true);
         setDownloadReady(false);
         setData(null);
+    
         try {
             const response = await fetch(`${url}/search`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ miRNA })
             });
-
+    
+            const completed = new Date();
+            setEndTime(completed);
+    
             if (response.ok) {
                 const result = await response.json();
                 if (!result.success) {
@@ -39,11 +49,14 @@ function Search() {
                 setData({ success: false, error: errorResult.error || `HTTP error! status: ${response.status}` });
             }
         } catch (error) {
+            const completed = new Date();
+            setEndTime(completed);
             setData({ success: false, error: error.message || 'Unknown error' });
         } finally {
             setPredicting(false);
         }
     };
+    
 
     const handleDownloadClick = async () => {
         try {
@@ -81,6 +94,20 @@ function Search() {
                     <label>miRNA Sequence</label>
                     <input type="text" value={miRNA} placeholder="e.g., UGAGGUAGUAGGUUGUAUAGUU (5' → 3')" onChange={(e) => setmiRNA(e.target.value)}/>
                     <button onClick={handleSubmit}>Search</button>
+                    <div className="example-option">
+                    <input 
+                        type="checkbox" 
+                        id="useExample" 
+                        onChange={(e) => {
+                            if (e.target.checked) {
+                                setmiRNA("UGAGGUAGUAGGUUGUAUAGUU");
+                            }else{
+                                setmiRNA("");
+                            }
+                        }} 
+                    />
+                    <label htmlFor="useExample"> Example miRNA Submission</label>
+                </div>
                 </div>
                 <div className="results">
                     {predicting && !data && (
@@ -93,6 +120,10 @@ function Search() {
                     {data?.success && (
                         <>
                             <p id="message">{data.message}</p>
+
+                            {startTime && (<p id="message">Search started at:{startTime.toLocaleString()}</p>)}
+                            {endTime && (<p id="message">Search completed at:{endTime.toLocaleString()}</p>)}
+
                             {Object.keys(matchTypeSummary).length > 0 && (
                                 <div className="match-summary">
                                     <h3>Match Summary</h3>

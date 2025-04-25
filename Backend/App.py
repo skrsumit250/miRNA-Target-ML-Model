@@ -3,8 +3,8 @@ import json
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from joblib import load
-from Computation import embedding
-from Search import search_targets
+from Embedding import embedding
+from Analysis import search_targets
 
 app = Flask(__name__)
 CORS(app)

@@ -4,7 +4,7 @@ function Home(){
         <>
             <div className="home">
                 <div className="box">
-                    <h2>Web Application Description: miRNA Target Prediction & Comparative Analysis</h2>
+                    <h2>miRNA Target Prediction & Comparative Analysis</h2>
                     <p>Welcome to the miRNA Target Prediction & Comparative Analysis platform-a comprehensive web-based tool designed to accelerate and enhance the discovery of microRNA (miRNA) targets using state-of-the-art computational methods.</p>
                 </div>
                 <div className="box">
