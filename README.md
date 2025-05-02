@@ -1,58 +1,32 @@
-# miRNA Target Prediction and Comparative Analysis
+# miRNA-Target-Prediction-and-Comparative-Analysis
+**Author : [Sumit Kumar](https://skrsumit250.github.io/Portfolio/)**
+## Description
+This project generates multiple RIB files containing random sequence length, amino acids residues, and their phi and psi angles. Each RIB file is then utilized to produce its corresponding PDB file using ribosome Linux tools. The entire process is streamlined through a single base file, which manage the compilation, execution, and file generation steps.
 
-A machine learning pipeline for miRNA target prediction using Support Vector Regression (SVR) and seed-region comparative analysis. Developed by **Sumit Kumar (IIT Guwahati)** under supervision of **Dr. Kusum K Singh**.
+## Usage
+1. **Prerequisites:**
+   - Linux Operating sysytem or subsystem in your computer.
+   - C++ compiler installed.[ if not then run `sudo apt install g++` or (`sudo apt update` and then `sudo apt install build-essential`) to   install ]
+   - fortran installed. [ if not then run `sudo apt install gfortran`]
 
-## Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results](#results)
-- [Dataset](#dataset)
-- [Methodology](#methodology)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Citation](#citation)
-- [Contact](#contact)
+2. **Execution:**
+   - Open a terminal window and navigate to the directory containing the project files.
+   - Run the following commands:
+   - chmod +x run.sh
+   - ./run.sh
 
-## Overview
-This repository contains:
-1. **SVR Model**: Predicts miRNA-mRNA binding compatibility using:
-   - Seed region features (7-mer/8-mer matches)
-   - GC content
-   - Binding free energy (ΔG)
-2. **Comparative Analysis**: Identifies targets for novel miRNAs via:
-   - Seed-region similarity (6-8mer matches)
-   - Thermodynamic stability analysis
+3. **Output:**
+   - After execution, builder files (`ribosome`) will generated in main directory.
+   - ribfiles and their corresponding PDB files will be generated & available in the `PDBoutput` main directory.
 
-Key achievements:
-✔ 40-60% prediction accuracy (MSE: 25-200)  
-✔ Automated seed matching with ViennaRNA  
-✔ Structured CSV outputs for downstream analysis
+4. **Customization:**
+   - Modify the parameters in `algorithm.cpp` to adjust the randomness of sequence length, amino acids residues, and angles.
+   - Update the paths and filenames in the bash file (`run.sh`) as needed.
 
+## Notes
+- Ensure that the ribosome tool (`ribosome`) and the required input files (`res.zmat`) are correctly referenced and accessible from the provided paths.
+- Make sure to review the generated PDB files for accuracy and validity, especially if modifying the code or input parameters.
 
-## Features
+## Support
+- For any issues or questions regarding the project, please refer to the documentation or contact [skrsumit250@gmail.com](mailto:skrsumit250@gmail.com).
 
-### Core Functionalities
-| Module        | Description                       | Key Parameters         |
-|---------------|-----------------------------------|------------------------|
-| SVR Predictor | miRNA-target binding prediction   | C=100, kernel='poly'   |
-| Seed Analyzer | Comparative target inference      | 6mer/7mer/8mer matching|
-
-### Technical Specifications
-- **Input Formats**: FASTA (sequences), CSV/JSON (annotations)
-- **Output Formats**: CSV, PNG (plots)
-- **Dependencies**: Python 3.8+, ViennaRNA, scikit-learn
-
-
-## Installation
-
-### Prerequisites
-```bash
-conda install -c bioconda viennarna
-
-git clone https://github.com/skrsumit250/miRNA-Target-Prediction-and-Comparative-Analysis.git
-cd miRNA-Target-Prediction-and-Comparative-Analysis
-conda env create -f environment.yml
-conda activate mirna-pred
