@@ -128,7 +128,7 @@ We welcome contributions!
 
 ## Acknowledgements
 
-Supervised by Dr. Kusum K. Singh(https://www.iitg.ac.in/biotech/faculty_profile.php?fname=Kusum%20K&lname=Singh&iitg=1137&mail=kusumsingh@iitg.ac.in), Department of Biosciences and Bioengineering, IIT Guwahati.
+Supervised by [Dr. Kusum K. Singh](https://www.iitg.ac.in/biotech/faculty_profile.php?fname=Kusum%20K&lname=Singh&iitg=1137&mail=kusumsingh@iitg.ac.in), Department of Biosciences and Bioengineering, IIT Guwahati.
 
 ---
 
