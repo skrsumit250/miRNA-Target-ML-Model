@@ -41,8 +41,7 @@ This dual-approach framework enhances the accuracy and efficiency of miRNA targe
 
 ## Web Interface
 
-Try the live demo:  
-**[miRNA Target Prediction Web App](https://skrsumit250.github.io/miRNA-Target-Prediction-and-Comparative-Analysis/)**
+Try the live demo: **[miRNA Target Prediction Web App](https://skrsumit250.github.io/miRNA-Target-Prediction-and-Comparative-Analysis/)**
 
 ### Steps to Use
 
