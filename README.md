@@ -61,7 +61,7 @@ Try the live demo: **[miRNA Target Prediction Web App](https://skrsumit250.githu
 ### 2. Comparative Analysis (Seed Region Similarity)
 
 - **Purpose:** Identify potential targets for a novel or unknown miRNA by comparing seed regions.
-- **How to Use:**Enter the miRNA sequence in the analysis section of the web interface and submit.  
+- **How to Use:** Enter the miRNA sequence in the analysis section of the web interface and submit.  
 
 ---
 
