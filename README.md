@@ -56,7 +56,7 @@ Try the live demo: **[miRNA Target Prediction Web App](https://skrsumit250.githu
 ### 1. Prediction (SVR Model)
 
 - **Purpose:** Predict binding compatibility between a miRNA and a target gene sequence.
-- **How to Use:**Enter both the miRNA sequence and the target gene sequence in the web interface and submit.Alternatively, send a POST request to the backend API as shown below:
+- **How to Use:** Enter both the miRNA sequence and the target gene sequence in the web interface and submit.Alternatively, send a POST request to the backend API as shown below:
 
 ### 2. Comparative Analysis (Seed Region Similarity)
 
